@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level0</title>
+</head>
+<body>
+    <script>
+        var str = 'today is a happy day',newstr='';
+        var len=str.length;//长度
+        str=str.split("");//分割成每一个字母
+        function change()
+        {
+            for(var i=0;i<len;i++)
+            {
+                if(i==0)
+                {
+                    str[i]=str[i].toUpperCase();//字符串首字母大写
+                }
+                else if(str[i]==' ')
+                {
+                    str[i+1]=str[i+1].toUpperCase();//每个英文单词首字母大写
+                }
+                newstr+=str[i];
+            }
+            newstr[i]=' ';
+            return newstr;
+        }
+        change(str);    //'Today Is A Happy Day'
+        console.log(newstr);
+    </script>
+</body>
+</html>

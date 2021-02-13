@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level2_2</title>
+</head>
+<body>
+    <script>
+        // 利用递归算法实现数组的扁平化
+        var arr = [[1, 2], [3, 4], [6, 7, 9, [11, 12, [12, 13, [14]]]], 10];
+        function even(arr)
+        {
+            var len=arr.length;
+            var newarr=[];// 先设定一个新的数组存放扁平化后的数组
+            for(var i=0;i<len;i++)
+            {
+                if(Array.isArray(arr[i]))
+                // 判断原先数组的第i个位置处的子元素是否为新的数组
+                // 如果返回值为true则应将子数组连接在newarr之后，再进一步利用递归
+                {
+                    // console.log(arr[i]);
+                    newarr=newarr.concat(even(arr[i]));
+                    console.log(newarr);
+                }
+                else
+                // 如果返回false则利用push，将数组非子数组元素直接存放在newarr中
+                {
+                    newarr.push(arr[i]);
+                }
+            }
+            return newarr;
+        }
+        console.log(even(arr));
+    </script>
+</body>
+</html>

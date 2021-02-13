@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level1_1</title>
+</head>
+<body>
+    <script>
+        var arr='ABCDEEF,GHJKKM';
+        var obj={};
+        function recur()
+        {
+            // 以对象obj存放每一个字母出现的个数
+            for(var i=0;i<arr.length;i++) 
+            {
+                // 先将每一个字母都存在key中
+                var key=arr[i];
+                if(obj[key]==undefined)
+                // 此处为没有在obj中存放的字母
+                {
+                    obj[key]=1;
+                }
+                else
+                // 此处为已经在obj中存放的字母
+                {
+                    obj[key]++;
+                }
+            }
+            for(var a in obj)
+            {
+                // 对出现次数大于1次的字母进行输出
+                if(obj[a]>1)
+                {
+                    // 将重复字母组合成新的字符串
+                    var newstr='';
+                    for(var j=0;j<obj[a];j++)
+                    {
+                        newstr+=a;
+                    }
+                    newstr[j]='';
+                    console.log(newstr);
+                }
+            }
+        }
+        recur(arr);
+    </script>
+</body>
+</html>

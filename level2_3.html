@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level2_3</title>
+</head>
+<body>
+    <script>
+        // 方法一
+        let arr=[{id:10,name:'kc'},{id:8,name:'hy'},{id:15,name:'pipi'},{id:2,name:'mama'}];
+        arr.sort(CompareArray());
+        function CompareArray()
+        {
+            return function compare(arr_X,arr_Y)
+            {
+                if(arr_X.id>arr_Y.id){
+                // 如果arr_X.id比arr_Y.id大，则需要调换位置，则返回1
+                    return 1;
+                }else if(arr_X.id<arr_Y.id){
+                // 如果arr_X.id比arr_Y.id小，则不需要调换位置，则返回-1
+                    return -1;
+                }else{
+                    return 0;
+                }
+            }
+        }      
+        console.log(arr);
+    </script>
+    <!-- <script>
+        // 方法二
+        let arr=[{id:10,name:'kc'},{id:8,name:'hy'},{id:15,name:'pipi'},{id:2,name:'mama'}];
+        arr.sort(function CompareArray(arr_X,arr_Y){
+            if(arr_X.id>arr_Y.id) return 1;
+            else if(arr_X.id<arr_Y.id) return -1;
+            else return 0;
+        });
+        console.log(arr);
+    </script> -->
+</body>
+</html>
